@@ -93,15 +93,18 @@ vgg = nn.Sequential(
     nn.ReLU()  # relu5-4
 )
 
-mlp = nn.ModuleList([nn.Linear(64, 64),
+mlp = nn.ModuleList([nn.Linear(64, 64), #(64,256)
                     nn.ReLU(),
-                    nn.Linear(64, 16),
-                    nn.Linear(128, 128),
+                    nn.Linear(64, 16), #(256,256)
+                    
+                    nn.Linear(128, 128), #(128,256)
                     nn.ReLU(),
-                    nn.Linear(128, 32),
+                    nn.Linear(128, 32), #(256,256)
+                    
                     nn.Linear(256, 256),
                     nn.ReLU(),
                     nn.Linear(256, 64),
+
                     nn.Linear(512, 512),
                     nn.ReLU(),
                     nn.Linear(512, 128)]) 

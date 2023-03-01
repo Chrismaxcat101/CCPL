@@ -54,8 +54,11 @@ parser.add_argument('--style', type=str,
 parser.add_argument('--style_dir', type=str,
                     help='Directory path to a batch of style images')
 parser.add_argument('--vgg', type=str, default='models/vgg_normalised.pth')
-parser.add_argument('--decoder', type=str, help='put the trained decoder here')
-parser.add_argument('--SCT', type=str, help='put the trained SCT module here')
+parser.add_argument('--decoder', type=str, help='put the trained decoder here',
+                    default='models/decoder_iter_160000.pth.tar')
+
+parser.add_argument('--SCT', type=str, help='put the trained SCT module here',
+                    default='models/sct_iter_160000.pth.tar')
 
 # Additional options
 parser.add_argument('--content_size', type=int, default=512,
